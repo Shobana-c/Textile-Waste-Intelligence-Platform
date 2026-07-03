@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - uploads_data:/app/uploads
+      - db_data:/app
+    environment:
+      - DATABASE_URL=sqlite:///./textile_waste.db
+      - SECRET_KEY=texcycle-circular-key-super-secure-auth-2026
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  uploads_data:
+  db_data:

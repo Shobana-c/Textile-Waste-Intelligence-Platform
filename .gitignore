@@ -1,0 +1,40 @@
+# Virtual Environment
+backend/venv/
+backend/.venv/
+ENV/
+env/
+
+# Node packages and build outputs
+frontend/node_modules/
+frontend/dist/
+frontend/.svelte-kit/
+frontend/.next/
+
+# Databases
+backend/textile_waste.db
+backend/textile_waste.db-journal
+
+# Python caches
+__pycache__/
+*/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+.pytest_cache/
+
+# Local media uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# IDE Configs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS Files
+.DS_Store
+Thumbs.db
