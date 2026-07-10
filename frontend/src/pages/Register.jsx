@@ -54,11 +54,23 @@ const Register = () => {
   ];
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-black px-4 py-12 overflow-hidden font-sans">
+    <div className="relative min-h-screen flex items-center justify-center bg-[#040809] px-4 py-12 overflow-hidden font-sans">
       
-      {/* 🌌 Deep Environmental Radial Glow Backgrounds */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/[0.03] rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/[0.04] rounded-full blur-[120px] pointer-events-none"></div>
+      {/* 🧵 Subtle Woven Textile Grid Overlay (Mimics fabric threads) */}
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none opacity-60"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(16, 185, 129, 0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: '24px 24px'
+        }}
+      ></div>
+
+      {/* 🌌 Large, Slow Pulsing Environmental Radial Glows */}
+      <div className="absolute top-[10%] left-[5%] w-[450px] h-[450px] rounded-full bg-emerald-500/[0.04] blur-[120px] pointer-events-none animate-pulse"></div>
+      <div className="absolute bottom-[10%] right-[5%] w-[500px] h-[500px] rounded-full bg-teal-500/[0.05] blur-[120px] pointer-events-none"></div>
 
       <div className="w-full max-w-md z-10 space-y-6">
         
@@ -74,7 +86,7 @@ const Register = () => {
         </div>
 
         {/* Centered Register Card */}
-        <div className="glass-card rounded-3xl p-8 shadow-2xl relative border border-slate-900 bg-slate-950/60 backdrop-blur-xl">
+        <div className="glass-card rounded-3xl p-8 shadow-2xl relative border border-slate-900 bg-slate-950/70 backdrop-blur-xl">
           <h2 className="text-lg font-bold text-white mb-6 text-center">Create Operator Account</h2>
 
           {error && (
