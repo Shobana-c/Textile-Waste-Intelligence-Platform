@@ -1,9 +1,12 @@
 const getBackendUrl = () => {
-  // If window exists, use current host, otherwise default
+  // If an environment variable is defined (e.g. for cloud production deployment)
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  // Otherwise default to current host on port 8000 for local development
   if (typeof window !== 'undefined') {
     const protocol = window.location.protocol;
     const hostname = window.location.hostname;
-    // Default to port 8000 for backend
     return `${protocol}//${hostname}:8000/api/v1`;
   }
   return 'http://localhost:8000/api/v1';
