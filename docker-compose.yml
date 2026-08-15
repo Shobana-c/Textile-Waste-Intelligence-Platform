@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: textile_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - /app/uploads # Keep uploads separate so they don't overwrite local files
+    environment:
+      - SECRET_KEY=supersecretkeyforjwttokengenerationtextilewasteplatform
+      - PROJECT_NAME=Textile Waste Intelligence Platform
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: textile_frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    restart: always
