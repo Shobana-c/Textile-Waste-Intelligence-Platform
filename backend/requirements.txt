@@ -10,7 +10,7 @@ email-validator
 opencv-python-headless
 pillow
 scikit-learn
-xgboost
+xgboost-cpu
 pandas
 numpy
 reportlab
